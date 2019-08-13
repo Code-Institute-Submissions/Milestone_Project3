@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    </head>
+    <body>
+        {% for task in tasks %}
+            {{task.category_name}}
+            {{task.task_type}}
+            {{task.task_name}}
+            {{task.task_description}}
+            {{task.task_ingredients}}
+            {{task.task_notes}}
+            {{task.task_instructions}}
+        {% endfor %}
+    </body>
+</html>
