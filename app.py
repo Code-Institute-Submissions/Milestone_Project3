@@ -19,7 +19,14 @@ def get_tasks():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html")
+    return render_template("addrecipe.html", categories=mongo.db.categories.find())
+    
+    
+@app.route('/insert_task', methods=['POST'])
+def insert_task():
+    tasks = mongo.db.tasks
+    tasks.insert_one(request.form.to_dict())
+    return redirect(url_for('get_tasks'))    
 
 
 if __name__ == '__main__':

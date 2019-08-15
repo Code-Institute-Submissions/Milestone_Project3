@@ -2,4 +2,336 @@
 
 <h3>Add Recipe</h3>
 
+<div class="container">
+  <div class="row">
+    <form action="" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">menu</i>
+          <select id="category_name" name="category_name">
+        <option value="" disabled selected>Choose Recipe Category</option>
+        {%  for category in categories %}
+          <option value="{{category.category_name}}">{{category.category_name}}</option>
+        {% endfor %}
+        
+      </select>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">mode_edit</i>
+          <input id="task_name" name="task_name" type="text" class="validate">
+          <label for="icon_prefix2">Recipe Name <em>( Mozzarella Pizza )</em></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="icon_prefix2" input id="task_description" name="task_description" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Recipe Description <em>( Mozzarella, tomatoe & basil pizza )</em></label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_1" name="task_ingredients_1" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient <em>( 12 inch pizza base )</em> </label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_1" name="task_notes_1" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note <em>( Cover pizza base with tomatoe sauce )</em> </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_2" name="task_ingredients_2" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_2" name="task_notes_2" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_3" name="task_ingredients_3" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_3" name="task_notes_3" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_4" name="task_ingredients_4" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_4" name="task_notes_4" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_5" name="task_ingredients_5" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_5" name="task_notes_5" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_6" name="task_ingredients_6" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_6" name="task_notes_6" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_7" name="task_ingredients_7" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_7" name="task_notes_7" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_8" name="task_ingredients_8" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_8" name="task_notes_8" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_9" name="task_ingredients_9" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_9" name="task_notes_9" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">add_circle</i>
+              <textarea id="icon_prefix2" input id="task_ingredients_10" name="task_ingredients_10" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Ingredient</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">sort</i>
+              <textarea id="icon_prefix2" input id="task_notes_10" name="task_notes_10" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Preperation Note</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_1" name="task_instructions_1" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes <em>( Pre heat oven to 200 deg )</em></label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_2" name="task_instructions_2" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_3" name="task_instructions_3" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_4" name="task_instructions_4" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_5" name="task_instructions_5" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_6" name="task_instructions_6" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_7" name="task_instructions_7" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_8" name="task_instructions_8" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_9" name="task_instructions_9" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">local_dining</i>
+              <textarea id="icon_prefix2" input id="task_instructions_10" name="task_instructions_10" type="text" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Cooking Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+    </form>
+  </div>
+
+
+  <!-- end of div-->
+</div>
+
+
 {% endblock %}
