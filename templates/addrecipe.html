@@ -4,14 +4,14 @@
 
 <div class="container">
   <div class="row">
-    <form action="" method="POST" class="col s12">
+    <form action="{{ url_for('insert_recipe')}}" method="POST">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">menu</i>
-          <select id="category_name" name="category_name">
+          <select id="category" name="category_name">
         <option value="" disabled selected>Choose Recipe Category</option>
-        {%  for category in categories %}
-          <option value="{{category.category_name}}">{{category.category_name}}</option>
+        {%  for cat in categories %}
+          <option value="{{cat.category_name}}">{{cat.category_name}}</option>
         {% endfor %}
         
       </select>
@@ -23,36 +23,36 @@
         </div>
       </div>
 
-      <div class="row">
+      <!--<div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mode_edit</i>
-              <textarea id="icon_prefix2" input id="task_description" name="task_description" type="text" class="materialize-textarea"></textarea>
+              <input id="task_description" name="task_description" type="text" class="validate">
               <label for="icon_prefix2">Recipe Description <em>( Mozzarella, tomatoe & basil pizza )</em></label>
             </div>
           </div>
         </form>
       </div>
 
-      <div class="row">
+     <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
               <i class="material-icons prefix">add_circle</i>
-              <textarea id="icon_prefix2" input id="task_ingredients_1" name="task_ingredients_1" class="materialize-textarea"></textarea>
+              <textarea id="icon_prefix2" input id="task_ingredients" name="task_ingredients" class="materialize-textarea"></textarea>
               <label for="icon_prefix2">Ingredient <em>( 12 inch pizza base )</em> </label>
             </div>
             <div class="input-field col s6">
               <i class="material-icons prefix">sort</i>
-              <textarea id="icon_prefix2" input id="task_notes_1" name="task_notes_1" class="materialize-textarea"></textarea>
+              <textarea id="icon_prefix2" input id="task_notes" name="task_notes" class="materialize-textarea"></textarea>
               <label for="icon_prefix2">Preperation Note <em>( Cover pizza base with tomatoe sauce )</em> </label>
             </div>
           </div>
         </form>
       </div>
       
-      <div class="row">
+     <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
@@ -203,14 +203,14 @@
             </div>
           </div>
         </form>
-      </div>
+      </div> 
       
       <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">local_dining</i>
-              <textarea id="icon_prefix2" input id="task_instructions_1" name="task_instructions_1" type="text" class="materialize-textarea"></textarea>
+              <textarea id="icon_prefix2" input id="task_instructions" name="task_instructions_1" type="text" class="materialize-textarea"></textarea>
               <label for="icon_prefix2">Cooking Notes <em>( Pre heat oven to 200 deg )</em></label>
             </div>
           </div>
@@ -323,8 +323,12 @@
             </div>
           </div>
         </form>
+      </div> -->
+      <div class="row">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
+        <i class="material-icons right">send</i>
+      </button>
       </div>
-
 
     </form>
   </div>
