@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
@@ -15,12 +16,15 @@ mongo = PyMongo(app)
 @app.route('/get_tasks')
 def get_tasks():
     tasks=mongo.db.tasks.find()
-    return render_template("tasks.html", tasks=tasks)
+    return render_template("tasks.html", page_title="tasks.html", tasks=tasks, image_list= 
+    ["https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", 
+    
+    "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"])
 
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html", categories=mongo.db.categories.find())
+    return render_template("addrecipe.html", page_title="addrecipe.html", categories=mongo.db.categories.find())
     
     
 @app.route('/insert_recipe', methods=["GET", "POST"])
