@@ -7,8 +7,8 @@
         <div class="col s12 m6 l6">
             <div class="card">
                 <div class="card-image">
-                    {% for image in image_list %}
-                    <img src={{ image }} style="width:100%, height=300px">
+                    {% for image in images %}
+                    <img src={{ image.img }} style="width:100%, height=300px">
                     {% endfor %}
                 </div>
                 <div class="card-content">

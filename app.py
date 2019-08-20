@@ -15,12 +15,12 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
+    data = []
+    with open('data/images.json', 'r') as json_data:
+        data = json.load(json_data)
     tasks=mongo.db.tasks.find()
-    return render_template("tasks.html", page_title="tasks.html", tasks=tasks, image_list= 
-    ["https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", 
-    
-    "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"])
-
+    return render_template("tasks.html", page_title="tasks.html", tasks=tasks, data=data) 
+   
 
 @app.route('/add_recipe')
 def add_recipe():
