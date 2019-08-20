@@ -1,14 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 
 
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="https://images.unsplash.com/photo-1497605217781-d1ff99a213db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1461&q=80"></div>
+</div>
+
 {% for task in tasks %}
 
 <div class="container">
-    <div class="row">
+    <div class="row center-cols center-align">
         <div class="col s12 m6 l6">
             <div class="card">
                 <div class="card-image">
-                    <img class="img-responsive" style="width:100%, height:300px" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <!--<img class="img-responsive" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">-->
                 </div>
                 <div class="card-content">
                     <h3>{{task.category_name}}</h3>
@@ -23,7 +39,7 @@
                     </span>
                 </div>
             </div>
-        </div>
+       </div> 
     </div>
 </div>
 
