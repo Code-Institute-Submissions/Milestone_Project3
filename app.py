@@ -16,12 +16,12 @@ mongo = PyMongo(app)
 @app.route('/get_tasks')
 def get_tasks():
     data = []
-    with open('data/images.json', 'r') as json_data:
+    with open('data/company.json', 'r') as json_data:
         data = json.load(json_data)
     tasks=mongo.db.tasks.find()
-    return render_template("tasks.html", page_title="tasks.html", tasks=tasks, data=data) 
-   
+    return render_template("tasks.html", page_title="tasks.html", tasks=tasks, company=data) 
 
+    
 @app.route('/add_recipe')
 def add_recipe():
     return render_template("addrecipe.html", page_title="addrecipe.html", categories=mongo.db.categories.find())
