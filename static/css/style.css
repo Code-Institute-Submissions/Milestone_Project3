@@ -1,15 +1,37 @@
+/* ----- Universal ----- */
+
 body {
-    background-color: #F7FEE8;
+    background-color: #D9FAC7;
 }
 
+/* ----- tasks.html ----- */
 
-img {
+.parallax-container  {
     width:100%;
-    height: 600px!important;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+    position: relative;
+    color: black;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .center-cols > .col {
-  float:none; /* disable the float */
-  display: inline-block; /* make blocks inline-block */
-  text-align: center; /* restore text-align to default */
+  float:none; 
+  display: inline-block; 
+  text-align: center; 
+}
+
+/* ----- addrecipe.html ----- */
+
+.add_recipe {
+    background-color: whitesmoke;
+    padding:50px;
 }
