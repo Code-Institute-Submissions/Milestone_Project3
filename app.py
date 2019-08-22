@@ -13,13 +13,20 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
 
-# recipe card display information 
+# creates and loads recipe card
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
     tasks=mongo.db.tasks.find()
     return render_template("tasks.html", page_title="tasks.html", tasks=tasks) 
 
+
+# delete recipe card
+@app.route('/remove_task/<task_id>')
+def remove_task(task_id):
+    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('get_tasks'))
+    
 
 # add recipe html page    
 @app.route('/add_recipe')
