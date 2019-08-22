@@ -35,10 +35,12 @@ def insert_recipe():
     return redirect(url_for('get_tasks'))
 
 
-@app.route('/edit_recipe')
-def edit_recipe():
-    return render_template("editrecipe.html", page_title="editrecipe.html", categories=mongo.db.categories.find())
-    
+@app.route('/edit_recipe/<task_id>')
+def edit_recipe(task_id):
+    the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template("editrecipe.html", page_title="editrecipe.html", task=the_task, categories=all_categories)
+   
 """
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
