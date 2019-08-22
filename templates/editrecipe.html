@@ -4,7 +4,7 @@
 <div class="container">
   <h3>Edit Recipe</h3>
   <div class="row">
-    <form action="{{ url_for('insert_recipe', task_id=task._id)}}" method="POST">
+    <form action="{{ url_for('confirm_recipe', task_id=task._id)}}" method="POST">
       <div class="row">
         <div class="input-field col s12 l6">
           <i class="material-icons prefix">menu</i>
@@ -38,12 +38,12 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">add_circle</i>
           <textarea id="icon_prefix2" input id="task_ingredient" name="task_ingredient" class="materialize-textarea">{{task.task_ingredient}}</textarea>
-          <label for="icon_prefix2">Ingredient</label>
+          <label for="icon_prefix2">Ingredients List</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">sort</i>
           <textarea id="icon_prefix2" input id="task_note" name="task_note" class="materialize-textarea">{{task.task_note}}</textarea>
-          <label for="icon_prefix2">Preperation Note</label>
+          <label for="icon_prefix2">Preperation Notes</label>
         </div>
       </div>
 

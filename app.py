@@ -43,8 +43,8 @@ def edit_recipe(task_id):
     
 
 # update function to save edited data
-@app.route('/confirm_task/<task_id>', methods=["POST"])
-def confirm_task(task_id):
+@app.route('/confirm_recipe/<task_id>', methods=["POST"])
+def confirm_recipe(task_id):
     tasks = mongo.db.tasks
     tasks.update({'_id': ObjectId(task_id)},
     {
