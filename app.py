@@ -15,10 +15,18 @@ mongo = PyMongo(app)
 
 # creates and loads recipe card
 @app.route('/')
+
 @app.route('/get_tasks')
 def get_tasks():
     tasks=mongo.db.tasks.find()
     return render_template("tasks.html", page_title="tasks.html", tasks=tasks) 
+
+
+# create and load category card
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+                           categories=mongo.db.categories.find())
 
 
 # delete recipe card
