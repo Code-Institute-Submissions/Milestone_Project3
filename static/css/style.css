@@ -4,6 +4,10 @@ body {
     background-color: #D9FAC7;
 }
 
+.btn {
+    margin: 5px;
+}
+
 /* ----- tasks.html ----- */
 
 .parallax-container  {
@@ -34,4 +38,12 @@ body {
 .add_recipe {
     background-color: whitesmoke;
     padding:50px;
+}
+
+/* ----- categories.html ----*/
+
+.text-center {
+    display: block;
+    margin: auto;
+    margin-left: 50px;
 }

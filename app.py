@@ -28,7 +28,6 @@ def get_categories():
     return render_template('categories.html',
                            categories=mongo.db.categories.find())
 
-
 # delete recipe card
 @app.route('/remove_task/<task_id>')
 def remove_task(task_id):
@@ -39,7 +38,9 @@ def remove_task(task_id):
 # add recipe html page    
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html", page_title="addrecipe.html", categories=mongo.db.categories.find())
+    return render_template("addrecipe.html", page_title="addrecipe.html", 
+        categories=mongo.db.categories.find())
+
 
 # insert recipe function from add_recipe.html to tasks.html  
 @app.route('/insert_recipe', methods=["GET", "POST"])
@@ -55,6 +56,23 @@ def edit_recipe(task_id):
     the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     all_categories = mongo.db.categories.find()
     return render_template("editrecipe.html", page_title="editrecipe.html", task=the_task, categories=all_categories)
+    
+
+# edit category list
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('editcategory.html',
+                           category=mongo.db.categories.find_one(
+                           {'_id': ObjectId(category_id)}))
+                           
+
+# update category
+@app.route('/update_category/<category_id>', methods=['POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name')})
+    return redirect(url_for('get_categories'))
     
 
 # update function to save edited data
