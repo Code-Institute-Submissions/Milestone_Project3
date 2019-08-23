@@ -1,12 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
 
-<div class="parallax-container">
-  <div class="parallax"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></div>
-</div>
 
-<div class="container add_recipe">
-  <div class="row">
+<div class="container recipe">
+  <h3>Create Recipe</h3>
+    <div class="row">
     <form action="{{ url_for('insert_recipe')}}" method="POST">
       <div class="row">
         <div class="input-field col s12 l6">
@@ -41,7 +39,7 @@
           <label for="icon_prefix2">Ingredients List<em>( 12 inch pizza base )</em> </label>
         </div>
         <div class="input-field col s12">
-          <i class="material-icons prefix">sort</i>
+          <i class="material-icons prefix">add_circle</i>
           <textarea id="icon_prefix2" input id="task_note" name="task_note" class="materialize-textarea"></textarea>
           <label for="icon_prefix2">Preperation Notes <em>( Cover pizza base with tomatoe sauce )</em> </label>
         </div>
@@ -49,9 +47,17 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">local_dining</i>
+          <i class="material-icons prefix">add_circle</i>
           <textarea id="icon_prefix2" input id="task_instructions" name="task_instructions" type="text" class="materialize-textarea"></textarea>
           <label for="icon_prefix2">Cooking Notes <em>( Pre heat oven to 200 deg )</em></label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">add_circle</i>
+          <textarea id="icon_prefix2" input id="task_image" name="task_image" type="text" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">Recipe URL <em>( https:// )</em></label>
         </div>
       </div>
 
@@ -62,9 +68,8 @@
       </div>
     </form>
   </div>
-
-  <!-- end of div-->
 </div>
+
 
 
 {% endblock %}

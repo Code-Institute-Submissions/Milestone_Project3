@@ -22,41 +22,73 @@ def get_tasks():
     return render_template("tasks.html", page_title="tasks.html", tasks=tasks) 
 
 
-# create and load category card
-@app.route('/get_categories')
-def get_categories():
-    return render_template('categories.html',
-                           categories=mongo.db.categories.find())
-
-# delete recipe card
-@app.route('/remove_task/<task_id>')
-def remove_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
-    
-
 # add recipe html page    
 @app.route('/add_recipe')
 def add_recipe():
     return render_template("addrecipe.html", page_title="addrecipe.html", 
         categories=mongo.db.categories.find())
-
-
+ 
+ 
+# update function to save edited data
+@app.route('/confirm_recipe/<task_id>', methods=['POST'])
+def confirm_recipe(task_id):
+    tasks = mongo.db.tasks
+    tasks.update({'_id': ObjectId(task_id)},
+    {
+        'category_name':request.form.get('category_name'),
+        'task_name':request.form.get('task_name'),
+        'task_description':request.form.get('task_description'),
+        'task_note':request.form.get('task_note'),
+        'task_instructions':request.form.get('task_instructions'),
+        'task_image':request.form.get('task_image')
+    })
+    return redirect(url_for('get_tasks'))
+            
+        
 # insert recipe function from add_recipe.html to tasks.html  
 @app.route('/insert_recipe', methods=["GET", "POST"])
 def insert_recipe():
     tasks = mongo.db.tasks
     tasks.insert_one(request.form.to_dict())
     return redirect(url_for('get_tasks'))
-
-
+    
+    
 # edit tasks.html info function
 @app.route('/edit_recipe/<task_id>')
 def edit_recipe(task_id):
     the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     all_categories = mongo.db.categories.find()
     return render_template("editrecipe.html", page_title="editrecipe.html", task=the_task, categories=all_categories)
-    
+ 
+ 
+# delete recipe card
+@app.route('/remove_task/<task_id>')
+def remove_task(task_id):
+    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('get_tasks'))    
+
+# CATEGORIES FUNCTION    
+
+# create and load category card
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+                           categories=mongo.db.categories.find())
+
+
+# creation of new category
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    category_doc = {'category_name': request.form.get('category_name')}
+    mongo.db.categories.insert_one(category_doc)
+    return redirect(url_for('get_categories'))
+
+
+# add new category
+@app.route('/add_category')
+def add_category():
+    return render_template('addcategory.html')
+
 
 # edit category list
 @app.route('/edit_category/<category_id>')
@@ -82,35 +114,6 @@ def remove_category(category_id):
     return redirect(url_for('get_categories'))
 
 
-# creation of new category
-@app.route('/insert_category', methods=['POST'])
-def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('get_categories'))
-
-
-# add new category
-@app.route('/add_category')
-def add_category():
-    return render_template('addcategory.html')
-
-
-# update function to save edited data
-@app.route('/confirm_recipe/<task_id>', methods=['POST'])
-def confirm_recipe(task_id):
-    tasks = mongo.db.tasks
-    tasks.update({'_id': ObjectId(task_id)},
-    {
-        'category_name':request.form.get('category_name'),
-        'task_name':request.form.get('task_name'),
-        'task_description':request.form.get('task_description'),
-        'task_note':request.form.get('task_note'),
-        'task_instructions':request.form.get('task_instructions')
-    })
-    return redirect(url_for('get_tasks'))
-    
-   
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
