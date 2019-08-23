@@ -7,7 +7,7 @@
             {% for category in categories %}
             <li>
                 <div class="collapsible-header">
-                    <a href="" class="waves-effect waves-light btn">Del</a>
+                    <a href="{{url_for('remove_category', category_id=category._id)}}" class="waves-effect waves-light btn">Delete</a>
                     <a href="{{url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn">Edit</a>
                     <div class="task_header">
                         <h4 class="text-center">{{category.category_name}}</h4>
@@ -17,5 +17,8 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="row">
+         <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn">Add Category</a>
+    </div>       
 </div>
 {% endblock %}

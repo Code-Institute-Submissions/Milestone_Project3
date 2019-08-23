@@ -64,8 +64,8 @@ def edit_category(category_id):
     return render_template('editcategory.html',
                            category=mongo.db.categories.find_one(
                            {'_id': ObjectId(category_id)}))
+       
                            
-
 # update category
 @app.route('/update_category/<category_id>', methods=['POST'])
 def update_category(category_id):
@@ -75,8 +75,29 @@ def update_category(category_id):
     return redirect(url_for('get_categories'))
     
 
+# delete category
+@app.route('/remove_category/<category_id>')
+def remove_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))
+
+
+# creation of new category
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    category_doc = {'category_name': request.form.get('category_name')}
+    mongo.db.categories.insert_one(category_doc)
+    return redirect(url_for('get_categories'))
+
+
+# add new category
+@app.route('/add_category')
+def add_category():
+    return render_template('addcategory.html')
+
+
 # update function to save edited data
-@app.route('/confirm_recipe/<task_id>', methods=["POST"])
+@app.route('/confirm_recipe/<task_id>', methods=['POST'])
 def confirm_recipe(task_id):
     tasks = mongo.db.tasks
     tasks.update({'_id': ObjectId(task_id)},
