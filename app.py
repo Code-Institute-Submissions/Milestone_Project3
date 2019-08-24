@@ -67,7 +67,7 @@ def remove_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('get_tasks'))    
 
-# CATEGORIES FUNCTION    
+# CATEGORIES FUNCTIONS    
 
 # create and load category card
 @app.route('/get_categories')
