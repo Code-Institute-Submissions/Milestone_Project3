@@ -4,10 +4,10 @@ body {
     background-color: #D9FAC7;
 }
 
-.container-fluid {
-
-}
-
+.card .card-content {
+    text-align: center;
+}    
+    
 .btn {
     margin: 5px;
 }
