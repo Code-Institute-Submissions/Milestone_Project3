@@ -36,6 +36,10 @@ h3 {
     text-align: center;
 }
 
+.images {
+    height: 300px;
+}
+
 /* ----- tasks.html ----- */
 
 .parallax-container  {
@@ -62,4 +66,20 @@ h3 {
     display: block;
     margin: auto;
     margin-left: 50px;
+}
+
+
+/* ----- MEDIA QUERIES ----*/
+
+@media only screen and (max-width:500px) {
+    .parallax-container  {
+        height:300px;
+    }
+    nav .brand-logo {
+        font-size: 20px;
+    }
+    
+    .text-center {
+        font-size: 20px;
+    }
 }
