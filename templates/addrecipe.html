@@ -2,10 +2,10 @@
 
 
 
-<div class="container recipe">
+<div class="container recipe" id="recipe">
   <h3>Create Recipe</h3>
     <div class="row">
-    <form action="{{ url_for('insert_recipe')}}" method="POST">
+    <form action="{{ url_for('insert_recipe')}}" method="POST" onsubmit="checknull()">
       <div class="row">
         <div class="input-field col s12 l6">
           <i class="material-icons prefix">menu</i>
